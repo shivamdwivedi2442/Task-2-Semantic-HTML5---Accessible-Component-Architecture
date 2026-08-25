@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component — Sidebar Navigation</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <p style="padding:1rem 2rem 0;">
+    Component: sidebar navigation. Pattern:
+    <code>&lt;aside aria-label="Section navigation"&gt;</code> wrapping a
+    <code>&lt;nav&gt;</code>, grouped under visible
+    <code>&lt;h2&gt;</code> group headings, with the current section marked
+    <code>aria-current="page"</code> rather than only styled with color.
+  </p>
+
+  <div style="display:flex;">
+    <aside class="app-sidebar" aria-label="Section navigation" style="width:15rem;">
+      <nav aria-label="Dashboard sections">
+        <h2>Operations</h2>
+        <ul>
+          <li><a href="#" aria-current="page"><span class="rail-dot" aria-hidden="true"></span>Overview</a></li>
+          <li><a href="#"><span class="rail-dot" aria-hidden="true"></span>Shipment reports</a></li>
+          <li><a href="#"><span class="rail-dot" aria-hidden="true"></span>Team &amp; access</a></li>
+        </ul>
+        <h2>Support</h2>
+        <ul>
+          <li><a href="#"><span class="rail-dot" aria-hidden="true"></span>Open tickets</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</body>
+</html>

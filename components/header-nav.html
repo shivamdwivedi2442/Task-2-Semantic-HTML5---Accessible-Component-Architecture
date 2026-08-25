@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component — Header &amp; Navigation</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <p style="padding:1rem 2rem 0;">
+    Component: page header. Pattern: <code>&lt;header role="banner"&gt;</code>
+    wrapping a <code>&lt;nav aria-label="Primary"&gt;</code> with
+    <code>aria-current="page"</code> on the active link, and a user menu
+    built as a disclosure widget (<code>aria-haspopup</code>,
+    <code>aria-expanded</code>, <code>aria-controls</code> — see
+    <code>js/nav.js</code>).
+  </p>
+
+  <header class="app-header" role="banner">
+    <a class="brand" href="#">
+      <span class="brand-mark" aria-hidden="true">MO</span>
+      Meridian Ops
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#" aria-current="page">Dashboard</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Reports</a></li>
+      </ul>
+    </nav>
+    <div class="user-menu">
+      <button
+        type="button"
+        class="user-menu-btn"
+        data-menu-trigger
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="demo-user-menu-list"
+      >
+        Priya Sharma
+        <span aria-hidden="true">▾</span>
+      </button>
+      <ul class="user-menu-list" id="demo-user-menu-list" role="menu" hidden>
+        <li role="none"><a role="menuitem" href="#">Your profile</a></li>
+        <li role="none"><button role="menuitem" type="button">Sign out</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

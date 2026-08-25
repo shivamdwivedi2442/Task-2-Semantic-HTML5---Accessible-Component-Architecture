@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team &amp; Access — Meridian Ops</title>
+  <meta name="description" content="Manage Meridian Ops team members and access levels.">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell">
+
+    <header class="app-header" role="banner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">MO</span>
+        Meridian Ops
+      </a>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Dashboard</a></li>
+          <li><a href="users.html" aria-current="page">Users</a></li>
+          <li><a href="reports.html">Reports</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-menu">
+        <button
+          type="button"
+          class="user-menu-btn"
+          data-menu-trigger
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="user-menu-list"
+        >
+          Priya Sharma
+          <span aria-hidden="true">▾</span>
+        </button>
+        <ul class="user-menu-list" id="user-menu-list" role="menu" hidden>
+          <li role="none"><a role="menuitem" href="#">Your profile</a></li>
+          <li role="none"><a role="menuitem" href="#">Account settings</a></li>
+          <li role="none"><button role="menuitem" type="button">Sign out</button></li>
+        </ul>
+      </div>
+    </header>
+
+    <aside class="app-sidebar" aria-label="Section navigation">
+      <nav aria-label="Dashboard sections">
+        <h2>Operations</h2>
+        <ul>
+          <li><a href="../index.html"><span class="rail-dot" aria-hidden="true"></span>Overview</a></li>
+          <li><a href="reports.html"><span class="rail-dot" aria-hidden="true"></span>Shipment reports</a></li>
+          <li><a href="users.html" aria-current="page"><span class="rail-dot" aria-hidden="true"></span>Team &amp; access</a></li>
+        </ul>
+        <h2>Support</h2>
+        <ul>
+          <li><a href="#"><span class="rail-dot" aria-hidden="true"></span>Open tickets</a></li>
+          <li><a href="#"><span class="rail-dot" aria-hidden="true"></span>Escalations</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="app-main" tabindex="-1">
+      <div class="page-heading">
+        <span class="eyebrow">Team</span>
+        <h1>Team &amp; access</h1>
+        <p>Manage who has access to Meridian Ops and what each person can do.</p>
+      </div>
+
+      <section class="panel" aria-labelledby="team-table-heading">
+        <div class="panel-toolbar">
+          <h2 id="team-table-heading" style="margin:0;">Team members</h2>
+          <button type="button" class="btn btn-primary" data-modal-open="add-user-modal" style="margin-left:auto;">
+            + Add team member
+          </button>
+        </div>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <caption>7 team members. Use the buttons in the last column to edit or remove access.</caption>
+            <thead>
+              <tr>
+                <th scope="col" aria-sort="ascending">
+                  <button type="button">Name <span aria-hidden="true">↑</span></button>
+                </th>
+                <th scope="col">Role</th>
+                <th scope="col">Hub</th>
+                <th scope="col">Status</th>
+                <th scope="col"><span class="visually-hidden">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Priya Sharma</th>
+                <td>Dispatcher lead</td>
+                <td>Delhi</td>
+                <td><span class="status-pill" data-status="good">Active</span></td>
+                <td class="row-actions">
+                  <button type="button" class="btn btn-ghost btn-small" data-modal-open="add-user-modal">Edit</button>
+                  <button type="button" class="btn btn-danger btn-small" data-modal-open="delete-user-modal" data-user-name="Priya Sharma">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Arjun Verma</th>
+                <td>Route planner</td>
+                <td>Mumbai</td>
+                <td><span class="status-pill" data-status="good">Active</span></td>
+                <td class="row-actions">
+                  <button type="button" class="btn btn-ghost btn-small" data-modal-open="add-user-modal">Edit</button>
+                  <button type="button" class="btn btn-danger btn-small" data-modal-open="delete-user-modal" data-user-name="Arjun Verma">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Fatima Sheikh</th>
+                <td>Support agent</td>
+                <td>Bengaluru</td>
+                <td><span class="status-pill" data-status="watch">On leave</span></td>
+                <td class="row-actions">
+                  <button type="button" class="btn btn-ghost btn-small" data-modal-open="add-user-modal">Edit</button>
+                  <button type="button" class="btn btn-danger btn-small" data-modal-open="delete-user-modal" data-user-name="Fatima Sheikh">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Rohan Iyer</th>
+                <td>Dispatcher</td>
+                <td>Chennai</td>
+                <td><span class="status-pill" data-status="risk">Suspended</span></td>
+                <td class="row-actions">
+                  <button type="button" class="btn btn-ghost btn-small" data-modal-open="add-user-modal">Edit</button>
+                  <button type="button" class="btn btn-danger btn-small" data-modal-open="delete-user-modal" data-user-name="Rohan Iyer">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer" role="contentinfo">
+      <div class="footer-inner">
+        <p>&copy; 2026 Meridian Ops. Internal use only.</p>
+        <p><a href="#">Accessibility statement</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <!--  Add / edit team member -->
+  <div class="modal-overlay" id="add-user-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="add-user-title" tabindex="-1">
+      <div class="modal-header">
+        <h2 id="add-user-title">Add team member</h2>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close dialog">✕</button>
+      </div>
+
+      <form id="add-user-form" novalidate>
+        <fieldset>
+          <legend>Contact details</legend>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="user-name">
+                Full name <span class="required-flag" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="user-name"
+                name="name"
+                required
+                aria-required="true"
+                minlength="2"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="user-email">
+                Work email <span class="required-flag" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="user-email"
+                name="email"
+                required
+                aria-required="true"
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                aria-describedby="user-email-hint"
+              >
+              <span id="user-email-hint" class="hint">Must be a meridianops.com address.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Role &amp; access</legend>
+
+          <div class="form-field" style="margin-bottom:1rem;">
+            <label for="user-hub">Regional hub</label>
+            <select id="user-hub" name="hub" required aria-required="true">
+              <option value="">Select a hub</option>
+              <option value="delhi">Delhi</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="chennai">Chennai</option>
+              <option value="bengaluru">Bengaluru</option>
+              <option value="kolkata">Kolkata</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>Access level</legend>
+            <div class="radio-group">
+              <label><input type="radio" name="access" value="viewer" checked> Viewer</label>
+              <label><input type="radio" name="access" value="dispatcher"> Dispatcher</label>
+              <label><input type="radio" name="access" value="admin"> Admin</label>
+            </div>
+          </fieldset>
+
+          <div class="checkbox-group" style="margin-top:1rem;">
+            <label><input type="checkbox" name="notify" value="email"> Send welcome email</label>
+          </div>
+        </fieldset>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save team member</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete confirmation -->
+  <div class="modal-overlay" id="delete-user-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-user-title" aria-describedby="delete-user-desc" tabindex="-1">
+      <div class="modal-header">
+        <h2 id="delete-user-title">Remove team member?</h2>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close dialog">✕</button>
+      </div>
+      <p id="delete-user-desc">
+        This revokes their access to Meridian Ops immediately. This action cannot be undone.
+      </p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="button" class="btn btn-danger" data-modal-close>Remove access</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/modal.js"></script>
+</body>
+</html>

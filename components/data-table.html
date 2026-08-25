@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component — Data Table</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body style="padding:2rem;">
+  <h1>Component: Data table</h1>
+  <p>
+    Pattern: a <code>&lt;caption&gt;</code> describing the table's contents,
+    <code>&lt;th scope="col"&gt;</code> for column headers,
+    <code>&lt;th scope="row"&gt;</code> for the row's identifying cell, a
+    sortable column exposed with <code>aria-sort</code>, and status
+    communicated with both color and text (never color alone) via
+    <code>.status-pill</code>.
+  </p>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <caption>Example shipments table with a sortable Name column.</caption>
+      <thead>
+        <tr>
+          <th scope="col" aria-sort="ascending">
+            <button type="button">Shipment ID <span aria-hidden="true">↑</span></button>
+          </th>
+          <th scope="col">Route</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">SH-10432</th>
+          <td>Chennai → Pune</td>
+          <td><span class="status-pill" data-status="good">On time</span></td>
+        </tr>
+        <tr>
+          <th scope="row">SH-10431</th>
+          <td>Delhi → Lucknow</td>
+          <td><span class="status-pill" data-status="watch">Delayed 40m</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

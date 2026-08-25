@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component — Accessible Form</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body style="padding:2rem; max-width: 34rem;">
+  <h1>Component: Accessible form</h1>
+  <p>
+    Pattern: every control has a real <code>&lt;label for&gt;</code>, related
+    controls are grouped in a <code>&lt;fieldset&gt;</code> with a
+    <code>&lt;legend&gt;</code>, required fields carry both the native
+    <code>required</code> attribute and <code>aria-required="true"</code>
+    (for older assistive tech), format hints use <code>pattern</code>/
+    <code>minlength</code> plus a visible <code>.hint</code> tied in with
+    <code>aria-describedby</code>, and radio/checkbox groups sit inside their
+    own nested <code>&lt;fieldset&gt;</code>.
+  </p>
+
+  <form>
+    <fieldset>
+      <legend>Contact details</legend>
+      <div class="form-field" style="margin-bottom:1rem;">
+        <label for="demo-name">Full name <span class="required-flag" aria-hidden="true">*</span></label>
+        <input type="text" id="demo-name" name="name" required aria-required="true" minlength="2">
+      </div>
+      <div class="form-field">
+        <label for="demo-email">Work email <span class="required-flag" aria-hidden="true">*</span></label>
+        <input
+          type="email"
+          id="demo-email"
+          name="email"
+          required
+          aria-required="true"
+          pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+          aria-describedby="demo-email-hint"
+        >
+        <span id="demo-email-hint" class="hint">Must be a work address.</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Access level</legend>
+      <div class="radio-group">
+        <label><input type="radio" name="access" value="viewer" checked> Viewer</label>
+        <label><input type="radio" name="access" value="admin"> Admin</label>
+      </div>
+    </fieldset>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</body>
+</html>
